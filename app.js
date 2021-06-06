@@ -581,7 +581,7 @@ function isAdmin(req,res,next){
     }
 };
 
-app.listen(port,()=>{
+app.listen(process.env.PORT || 3000,()=>{
     console.log("Server Started!");
 });
 //left outer join 2 collections με aggregate pipeline
