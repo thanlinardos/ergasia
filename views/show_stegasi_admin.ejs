@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Αίτηση Στέγασης</title>
+    <!--fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/public/stegasi.css">
+</head>
+<body>
+    <div class="navbar">
+        <a class="main" href="/"><img src="/public/images/uniIcon.png" alt="Main-icon">Αρχική</a>
+        <span class="menu_hide"><button onclick="hide()" class="dropbtn">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="60" height="60" viewBox="0 0 60 60" xml:space="preserve">
+                <desc>Created with Fabric.js 4.2.0</desc>
+                <defs>
+                </defs>
+                <g transform="matrix(0 0 0 0 0 0)" id="350ed52f-b08f-49de-8b17-b9b35630a1be">
+                </g>
+                <g transform="matrix(1 0 0 1 30 30)" id="ea76c593-ac58-4aac-8f4f-ccba7b6d47b2">
+                <rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke" x="-30" y="-30" rx="0" ry="0" width="60" height="60"/>
+                </g>
+                <g transform="matrix(0.27 0 0 0.27 30 14)" id="0842d387-5232-4201-8111-21178f427aaf">
+                <path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform=" translate(-50, -50)" d="M 94.75 50 C 94.75 56.213 89.514 61.25 83.054 61.25 L 16.946 61.25 C 10.486 61.25 5.25 56.213 5.25 50 L 5.25 50 C 5.25 43.787 10.486 38.75 16.945999999999998 38.75 L 83.053 38.75 C 89.514 38.75 94.75 43.787 94.75 50 L 94.75 50 z" stroke-linecap="round"/>
+                </g>
+                <g transform="matrix(0.27 0 0 0.27 30 30)" id="fbe52639-873f-4e9b-bc76-18b8abdd80b2">
+                <path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform=" translate(-50, -50)" d="M 94.75 50 C 94.75 56.213 89.514 61.25 83.054 61.25 L 16.946 61.25 C 10.486 61.25 5.25 56.213 5.25 50 L 5.25 50 C 5.25 43.787 10.486 38.75 16.945999999999998 38.75 L 83.053 38.75 C 89.514 38.75 94.75 43.787 94.75 50 L 94.75 50 z" stroke-linecap="round"/>
+                </g>
+                <g transform="matrix(0.27 0 0 0.27 30 47)" id="62d43c2d-c238-4204-8b3a-668e591fed39">
+                <path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform=" translate(-50, -50)" d="M 94.75 50 C 94.75 56.213 89.514 61.25 83.054 61.25 L 16.946 61.25 C 10.486 61.25 5.25 56.213 5.25 50 L 5.25 50 C 5.25 43.787 10.486 38.75 16.945999999999998 38.75 L 83.053 38.75 C 89.514 38.75 94.75 43.787 94.75 50 L 94.75 50 z" stroke-linecap="round"/>
+                </g>
+                </svg>
+        </button></span>
+        <a class="nav-item" href="/sitisi" id="hide">Σίτιση</a>
+        <a class="nav-item" href="/stegasi" id="hide">Στέγαση</a>
+        <div class="nav-item dropdown" id="hide">Πληροφορίες 
+            <button onclick="navDropdown()" class="dropbtn">
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#9c27b0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="bevel"><circle cx="12" cy="12" r="10"/><path id="direction" d="M16 12l-4-4-4 4M12 16V9"/></svg>
+             </button>
+            <div class="dropdown-menu" id="dropdown">
+                <a href="/#sitisiInfo">Δήλωση σίτισης</a><a href="/#stegasiInfo">Δήλωση στέγασης</a><a id="hr" href="/#dikaiologhtikaInfo">Δικαιολογητικά</a>
+            </div>
+         
+         </div>
+         <div class="nav-item login">
+             <%if(user!=undefined){%>
+                 <%if(user.role=="admin"){%>
+                     <a href="/admin">admin: <%=user.username%></a>
+                     <%}else{%>
+                     <a>username: <%=user.username%></a><%}%>
+             <%}else{%>
+             <button id="login-btn" onclick="login()">Σύνδεση</button>
+             <%}%>
+         </div>
+         <form action="/logout?_method=DELETE" method="POST">
+             <div class="nav-item logout"><button type="submit" id="login-btn" style="width:90px">Αποσύνδεση</button></div>
+         </form>
+         
+    </div>
+    <br><br>
+    <div class="container">
+        <h4>Στοιχεία Φοιτητή<h4>
+        <label>ΟΝΟΜΑ: <%=form.username%></label><br>
+        <label>ΕΜΩΝΥΜΟ: <%=form.surname%></label><br>
+        <label>ΠΑΤΡΩΝΥΜΟ: <%=form.patronym%></label><br>
+
+        <h4>Στοιχεία Σχολής</h4>
+        <label>ΤΜΗΜΑ: <%=form.uni%></label><br>
+        <label>ΚΥΚΛΟΣ ΣΠΟΥΔΩΝ:<%=form.kuklos_spoudwn%></label><br>
+        <label>ΑΡΙΘΜΟΣ ΜΗΤΡΩΟΥ: <%=form.am%></label><br>
+        <label>Έτος Εισαγωγής: <%=form.startyear%></label><br>
+        <label>BARCODE: <%=form.barcode%></label><br>
+        
+        <h4>Τόπος Κατοικίας Φοιτητή</h4>
+        <label>ΔΙΕΥΘΥΝΣΗ: <%=form.tempadress.street%> <%=form.tempadress.number%></label><br>
+        <label>ΠΟΛΗ: <%=form.tempadress.city%></label><br>
+        <label> ΠΕΡΙΟΧΗ: <%=form.tempadress.region%></label><br>
+        <label>ΔΗΜΟΣ: <%=form.tempadress.division%></label>
+
+        <h4>Μόνιμη Κατοικία Φοιτητή</h4>
+        <label>ΔΙΕΥΘΥΝΣΗ: <%=form.permadress.street%> <%=form.permadress.number%></label><br>
+        <label>ΠΟΛΗ: <%=form.permadress.city%></label><br>
+        <label> ΠΕΡΙΟΧΗ: <%=form.permadress.region%></label><br>
+        <label>ΔΗΜΟΣ: <%=form.permadress.division%></label>
+
+        <h4>Στοιχεία Επικοινωνίας</h4>
+        <label>ΤΗΛΕΦΩΝΟ: <%=form.phone%></label><br>
+        <label>ΤΗΛΕΦΩΝΟ(Κινητό): <%=form.mobile%></label>
+
+        <h4>Ειδικές κατηγορίες</h4>
+        <label>Πολύτεκνη: <%if(form.poluteknh=="on"){%>
+            <span style="color:rgb(13, 179, 49)">ναι</span>
+        <%}else{%>
+            <span style="color:rgb(187, 14, 14)">όχι</span>
+        <%}%>
+        </label><br>
+        <label>Ορφανός από 1 γονέα: <%if(form.orphan1=="on"){%>
+            <span style="color:rgb(13, 179, 49)">ναι</span>
+        <%}else{%>
+            <span style="color:rgb(187, 14, 14)">όχι</span>
+        <%}%>
+
+        </label><br>
+        <label>Γονέας με ειδικές ανάγκες: <%if(form.parspecialneeds=="on"){%>
+            <span style="color:rgb(13, 179, 49)">ναι</span>
+        <%}else{%>
+            <span style="color:rgb(187, 14, 14)">όχι</span>
+        <%}%>
+
+        </label><br>
+        <label>Μέλος οικογένειας με ειδικές ανάγκες: <%if(form.famemberspecialneeds=="on"){%>
+            <span style="color:rgb(13, 179, 49)">ναι</span>
+        <%}else{%>
+            <span style="color:rgb(187, 14, 14)">όχι</span>
+        <%}%>
+
+        </label><br>
+        <label>Αδερφός/ή σπουδάζει: <%if(form.siblingstudy=="on"){%>
+            <span style="color:rgb(13, 179, 49)">ναι</span>
+        <%}else{%>
+            <span style="color:rgb(187, 14, 14)">όχι</span>
+        <%}%>
+        </label><br>
+        <label>Αδερφός/ή στο στρατό: <%if(form.siblingarmy=="on"){%>
+            <span style="color:rgb(13, 179, 49)">ναι</span>
+        <%}else{%>
+            <span style="color:rgb(187, 14, 14)">όχι</span>
+        <%}%>
+        </label><br>
+        <label>Διαζευγμένοι Γονείς: <%if(form.divorcedparents=="on"){%>
+            <span style="color:rgb(13, 179, 49)">ναι</span>
+        <%}else{%>
+            <span style="color:rgb(187, 14, 14)">όχι</span>
+        <%}%>
+        </label><br>
+        <div id="displayfile">
+            <a href="/show/Stegasi/ekkatharistiko/<%=form._id%>">Εκκαθαριστικό</a>
+        </div>
+        <div id="displayfile">
+            <a href="/show/Stegasi/tautothta/<%=form._id%>">Ταυτότητα</a>
+        </div>
+        <div id="displayfile">
+            <a href="/show/Stegasi/pasofile/<%=form._id%>">Πάσο</a>
+        </div>
+        <div><strong>Κατάσταση:</strong>
+            <svg viewBox="230.18 150.774 20 20" width="20" height="20">
+                <defs>
+                <linearGradient gradientUnits="userSpaceOnUse" x1="240.18" y1="150.774" x2="240.18" y2="170.774" id="gradient">
+                
+                <%if(check.state=="PENDING"){%>
+                <stop offset="0" id="1" style="stop-color: rgba(255, 255, 0, 1)"></stop>
+                <stop offset="1" id="2" style="stop-color: rgb(199, 199, 22)"></stop>
+                <%}else if(check.state=="ACCEPTED"){%>
+                <stop offset="0" id="3" style="stop-color: rgb(0, 255, 55)"></stop>
+                <stop offset="1" id="4" style="stop-color: rgb(13, 179, 49)"></stop>
+                <%}else if(check.state=="DENIED"){%>
+                <stop offset="0" id="5" style="stop-color: rgb(255, 0, 0)"></stop>
+                <stop offset="1" id="6" style="stop-color: rgb(187, 14, 14)"></stop>
+                <%}%>
+                </linearGradient>
+                </defs>
+                <circle cx="240.18" cy="160.774" r="10" style="stroke-linecap: round; paint-order: fill; fill: url(#gradient);"></circle>
+                
+            </svg>
+            <%=check.state%> <i>(τελευταία ενημέρωση : <%=check.lastUpdated%>)</i>
+            <div><strong>Σχόλια : </strong><%=check.comments%></div>
+        </div>     
+        <form action="/stegasiAdmin/<%=form._id%>/response"  method="POST">
+            <div>Κατάσταση:</div>
+            <select name="state">
+                <%if(check.state=="PENDING"){%>
+                <option value="PENDING" selected>PENDING</option>
+                <option value="ACCEPTED">ACCEPTED</option>
+                <option value="DENIED">DENIED</option>
+                <%}else if(check.state=="ACCEPTED"){%>
+                <option value="PENDING">PENDING</option>
+                <option value="ACCEPTED" selected>ACCEPTED</option>
+                <option value="DENIED">DENIED</option>
+                <%}else if(check.state=="DENIED"){%>
+                <option value="PENDING">PENDING</option>
+                <option value="ACCEPTED">ACCEPTED</option>
+                <option value="DENIED" selected>DENIED</option>
+                <%}%>
+            </select>
+            <input name="_id"  value="<%=check._id%>" hidden style="width: 0px; height: 0px;">
+            <input name="admin_ref" value="<%=check.admin_ref%>" hidden style="width: 0px; height: 0px;">
+            <input name="stegasi_ref"  value="<%=check.stegasi_ref%>" hidden style="width: 0px; height: 0px;">
+            <input name="lastUpdated"  value="<%=check.lastUpdated%>" hidden style="width: 0px; height: 0px;">
+            <br>
+            <br>
+            <div>Σχόλια:</div>
+            <div class="custom-div">
+            <input name="comments" id="comments" class="input" value="<%=check.comments%>">
+            </div>
+            <button id="login-btn" type="submit" style="width:80px;;">Απάντηση</button>
+           
+        </form>
+    </div>
+    
+    <script src="/public/stegasi.js" async defer></script>
+</body>
+</html>

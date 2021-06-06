@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="el">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Αρχική</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="public/main.css">
+        <!--fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Roboto:wght@700&display=swap" rel="stylesheet">
+        
+    </head>
+
+    <body>
+        
+       <div class="navbar">
+           <a class="main" href="/"><img src="public/images/uniIcon.png" alt="Main-icon">Αρχική</a>
+           <span class="menu_hide"><button onclick="hide()" class="dropbtn">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="60" height="60" viewBox="0 0 60 60" xml:space="preserve">
+                <desc>Created with Fabric.js 4.2.0</desc>
+                <defs>
+                </defs>
+                <g transform="matrix(0 0 0 0 0 0)" id="350ed52f-b08f-49de-8b17-b9b35630a1be">
+                </g>
+                <g transform="matrix(1 0 0 1 30 30)" id="ea76c593-ac58-4aac-8f4f-ccba7b6d47b2">
+                <rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke" x="-30" y="-30" rx="0" ry="0" width="60" height="60"/>
+                </g>
+                <g transform="matrix(0.27 0 0 0.27 30 14)" id="0842d387-5232-4201-8111-21178f427aaf">
+                <path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform=" translate(-50, -50)" d="M 94.75 50 C 94.75 56.213 89.514 61.25 83.054 61.25 L 16.946 61.25 C 10.486 61.25 5.25 56.213 5.25 50 L 5.25 50 C 5.25 43.787 10.486 38.75 16.945999999999998 38.75 L 83.053 38.75 C 89.514 38.75 94.75 43.787 94.75 50 L 94.75 50 z" stroke-linecap="round"/>
+                </g>
+                <g transform="matrix(0.27 0 0 0.27 30 30)" id="fbe52639-873f-4e9b-bc76-18b8abdd80b2">
+                <path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform=" translate(-50, -50)" d="M 94.75 50 C 94.75 56.213 89.514 61.25 83.054 61.25 L 16.946 61.25 C 10.486 61.25 5.25 56.213 5.25 50 L 5.25 50 C 5.25 43.787 10.486 38.75 16.945999999999998 38.75 L 83.053 38.75 C 89.514 38.75 94.75 43.787 94.75 50 L 94.75 50 z" stroke-linecap="round"/>
+                </g>
+                <g transform="matrix(0.27 0 0 0.27 30 47)" id="62d43c2d-c238-4204-8b3a-668e591fed39">
+                <path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform=" translate(-50, -50)" d="M 94.75 50 C 94.75 56.213 89.514 61.25 83.054 61.25 L 16.946 61.25 C 10.486 61.25 5.25 56.213 5.25 50 L 5.25 50 C 5.25 43.787 10.486 38.75 16.945999999999998 38.75 L 83.053 38.75 C 89.514 38.75 94.75 43.787 94.75 50 L 94.75 50 z" stroke-linecap="round"/>
+                </g>
+                </svg>
+        </button></span>
+           <a class="nav-item" id="hide" href="/sitisi">Σίτιση</a>
+           <a class="nav-item" id="hide" href="/stegasi">Στέγαση</a>
+           <div class="nav-item dropdown" id="hide">Πληροφορίες 
+               <button onclick="navDropdown()" class="dropbtn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#9c27b0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="bevel"><circle cx="12" cy="12" r="10"/><path id="direction" d="M16 12l-4-4-4 4M12 16V9"/></svg>
+                </button>
+               <div class="dropdown-menu" id="dropdown">
+                   <a href="/#sitisiInfo">Δήλωση σίτισης</a><a href="/#stegasiInfo">Δήλωση στέγασης</a><a id="hr" href="/#dikaiologhtikaInfo">Δικαιολογητικά</a>
+               </div>
+            
+            </div>
+            <div class="nav-item login">
+                <%if(user!=undefined){%>
+                    <%if(user.role=="admin"){%>
+                    <a href="/admin">admin: <%=user.username%></a>
+                    <%}else{%>
+                    <a>username: <%=user.username%></a><%}%>
+                <%}else{%>
+                <button id="login-btn" onclick="login()">Σύνδεση</button>
+                <%}%>
+            </div>
+            <%if(user!=undefined){%>
+            <form action="/logout?_method=DELETE" method="POST">
+                <div class="nav-item logout"><button type="submit" id="login-btn" style="width:90px">Αποσύνδεση</button></div>
+            </form>
+            <%}%>
+       </div>
+       <br><br>
+       
+       <div class="container">
+        <div id="stegasiInfo">
+       <h2>Στέγαση</h2>
+       <hr class = "hr">
+       <p>Το Πανεπιστήμιο διαθέτει 400 μονόκλινα δωμάτια κατανεμημένα σε 5 κτίρια. Επίσης , διαθέτει αίθουσες ψυχαγωγίας, κλειστό κολυμβητήριο, θέατρο και βιβλιοθήκες.
+
+           Στη Φ.Ε. μπορούν να σιτίζονται εκτός από τους οικότροφους και αριθμός μη οικότροφων φοιτητών του Πανεπιστημίου.
+           
+           Κριτήρια εισαγωγής στην Στέγαση είναι η οικονομική κατάσταση σε συνάρτηση με τον αριθμό των μελών της οικογένειας του φοιτητή.
+           
+           Αιτήσεις και σχετικά δικαιολογητικά υποβάλλονται για τους νεοεισαγόμενους μέσα σε 20 ημέρες από την έκδοση των αποτελεσμάτων των γενικών εξετάσεων και για τους ενδιάμεσα εγγραφόμενους φοιτητές περί τα τέλη Μαΐου.
+       </p>
+       <img src="/public/images/uni4.jpg" style="width: 80%;">
+         </div>
+       <div id="sitisiInfo">
+       <h2>Σίτιση</h2>
+       <hr class = "hr">
+       <p>Το Πανεπιστήμιο διαθέτει επίσης εστιατόριο με δυνατότητα εξυπηρέτησης 2000 ατόμων και κυλικεία.
+
+           Στο εστιατόριο μπορούν να σιτίζονται εκτός από τους οικότροφους και αριθμός μη οικότροφων φοιτητών του Πανεπιστημίου.
+           
+           Κριτήρια εισαγωγής στην Σίτιση είναι η οικονομική κατάσταση σε συνάρτηση με τον αριθμό των μελών της οικογένειας του φοιτητή.
+           
+           Αιτήσεις και σχετικά δικαιολογητικά υποβάλλονται για τους νεοεισαγόμενους μέσα σε 20 ημέρες από την έκδοση των αποτελεσμάτων των γενικών εξετάσεων και για τους ενδιάμεσα εγγραφόμενους φοιτητές περί τα τέλη Μαΐου.
+       </p>
+       <img src="/public/images/uni5.jpg" style="width: 80%;">
+        </div>
+       <div id="dikaiologhtikaInfo">
+       <h2>Δικαιολογητικά</h2>
+       <hr class = "hr">
+       <p> Για τις δηλώσεις σίτισης και στέγασης προσέχετε τα παρακάτω:
+           <ul>
+           <li><strong>Εκκαθαριστικό </strong>
+            <p>Για το εκκαθαριστικό προσέχετε τα παρακάτω :
+            </p>
+                <ol>
+                    <li>Υπογραφή</li>
+                    <li>Τα όρια εισοδήματος είναι 15000 το χρόνο για τη σίτιση και 10000 για τη στέγαση(δείτε την αντίστοιχη απόφαση του Υπουργείου Παιδείας)</li>
+                    <li>Πρόσφατη ημερομηνία συμπλήρωσης</li>
+                    <li>Ενημέρωμενο εκκαθαριστικό εντός 12 μηνών</li>
+                </ol>
+            </li>
+            
+            <li><strong>Η φωτογραφίες προφίλ πρέπει να είναι κάτω των 16MB.</strong></li>
+            <li><strong>Για το πάσο χρείαζονται και οι δύο όψεις.</strong></li>
+            <li><strong>Μόλις απαντήσει διαχειριστής στην αίτησή σας , θα αλλάξει η κατάσταση και πιθανών να δείτε κάποιο σχόλιο για τύχων προβλήματα.</strong></li>
+            </ul>
+
+    </p>
+        </div>
+    </div>
+        <script async defer>
+            function navDropdown(){
+            document.querySelector("#dropdown").classList.toggle("show");
+            direction = document.querySelector("#direction");
+            current = direction.getAttribute("d");
+            if(current === "M16 12l-4 4-4-4M12 8v7") direction.setAttribute("d","M16 12l-4-4-4 4M12 16V9");
+            else direction.setAttribute("d","M16 12l-4 4-4-4M12 8v7");
+        }
+        function login(){
+            window.location.href="/login/";
+        }
+
+        function hide(){
+            list =document.querySelectorAll("#hide")
+            list.forEach(element => {
+                element.classList.toggle("hide");
+            });
+        }
+
+        timeOutFunctionId=0;
+        function work(){
+            el = document.querySelector("#hide")
+            if(window.innerWidth>610){
+                if(el.classList.contains("hide")){
+                    hide()
+                }
+            }
+        }
+        window.addEventListener("resize",function(){
+            try{clearTimeout(timeOutFunctionId);
+            }catch(err){console.log(err)}
+            timeOutFunctionId = setTimeout(work, 500);
+        })
+        </script>
+    </body>
+</html>

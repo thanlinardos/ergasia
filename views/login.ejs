@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="/public/login.css">
+
+    </head>
+    <body>
+        <div class="container-head">
+            <a href="/">
+                <img src="/public/images/logo_Upatras.png">
+            </a>
+        </div>
+        <div class="container">
+            <div class="container-img">
+                <img src="/public/images/user.png">
+            </div>
+            <form action="/login/<%=redirect%>" method="POST">
+                <div class="custom-div">
+                    <input type="text" name ="username" required>
+                    <span></span>
+                    <label>Όνομα Χρήστη</label>
+                </div>
+                <div class="custom-div">
+                    <input type="password" name="password" required>
+                    <span></span>
+                    <label>Κωδικός</label>
+                </div>
+                <button>Σύνδεση</button>
+                <p>
+                    <a href="/register">Εγγραφή εδώ</a>
+                </p>
+            </form>
+        </div>
+
+    </body>
+</html>
+

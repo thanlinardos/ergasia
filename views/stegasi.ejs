@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Εστίαση</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Roboto:wght@700&display=swap" rel="stylesheet">
+        <!--styles -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="public/stegasi.css">
+    </head>
+    <body>
+      <div class="navbar">
+        <a class="main" href="/"><img src="public/images/uniIcon.png" alt="Main-icon">Αρχική</a>
+        <span class="menu_hide"><button onclick="hide()" class="dropbtn">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="60" height="60" viewBox="0 0 60 60" xml:space="preserve">
+              <desc>Created with Fabric.js 4.2.0</desc>
+              <defs>
+              </defs>
+              <g transform="matrix(0 0 0 0 0 0)" id="350ed52f-b08f-49de-8b17-b9b35630a1be">
+              </g>
+              <g transform="matrix(1 0 0 1 30 30)" id="ea76c593-ac58-4aac-8f4f-ccba7b6d47b2">
+              <rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke" x="-30" y="-30" rx="0" ry="0" width="60" height="60"/>
+              </g>
+              <g transform="matrix(0.27 0 0 0.27 30 14)" id="0842d387-5232-4201-8111-21178f427aaf">
+              <path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform=" translate(-50, -50)" d="M 94.75 50 C 94.75 56.213 89.514 61.25 83.054 61.25 L 16.946 61.25 C 10.486 61.25 5.25 56.213 5.25 50 L 5.25 50 C 5.25 43.787 10.486 38.75 16.945999999999998 38.75 L 83.053 38.75 C 89.514 38.75 94.75 43.787 94.75 50 L 94.75 50 z" stroke-linecap="round"/>
+              </g>
+              <g transform="matrix(0.27 0 0 0.27 30 30)" id="fbe52639-873f-4e9b-bc76-18b8abdd80b2">
+              <path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform=" translate(-50, -50)" d="M 94.75 50 C 94.75 56.213 89.514 61.25 83.054 61.25 L 16.946 61.25 C 10.486 61.25 5.25 56.213 5.25 50 L 5.25 50 C 5.25 43.787 10.486 38.75 16.945999999999998 38.75 L 83.053 38.75 C 89.514 38.75 94.75 43.787 94.75 50 L 94.75 50 z" stroke-linecap="round"/>
+              </g>
+              <g transform="matrix(0.27 0 0 0.27 30 47)" id="62d43c2d-c238-4204-8b3a-668e591fed39">
+              <path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform=" translate(-50, -50)" d="M 94.75 50 C 94.75 56.213 89.514 61.25 83.054 61.25 L 16.946 61.25 C 10.486 61.25 5.25 56.213 5.25 50 L 5.25 50 C 5.25 43.787 10.486 38.75 16.945999999999998 38.75 L 83.053 38.75 C 89.514 38.75 94.75 43.787 94.75 50 L 94.75 50 z" stroke-linecap="round"/>
+              </g>
+              </svg>
+      </button></span>
+        <a class="nav-item" href="/sitisiHome" id="hide">Σίτιση</a>
+        <a class="nav-item" href="/stegasiHome" id="hide">Στέγαση</a>
+        <div class="nav-item dropdown" id="hide">Πληροφορίες 
+            <button onclick="navDropdown()" class="dropbtn">
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#9c27b0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="bevel"><circle cx="12" cy="12" r="10"/><path id="direction" d="M16 12l-4-4-4 4M12 16V9"/></svg>
+             </button>
+            <div class="dropdown-menu" id="dropdown">
+                <a href="/#sitisiInfo">Δήλωση σίτισης</a><a href="/#stegasiInfo">Δήλωση στέγασης</a><a id="hr" href="/#dikaiologhtikaInfo">Δικαιολογητικά</a>
+            </div>
+         
+         </div>
+         <div class="nav-item login">
+          <%if(user!=undefined){%>
+            <%if(user.role=="admin"){%>
+              <a href="/admin">admin: <%=user.username%></a>
+              <%}else{%>
+              <a>username: <%=user.username%></a><%}%>
+          <%}else{%>
+          <button id="login-btn" onclick="login()">Σύνδεση</button>
+          <%}%>
+      </div>
+      <form action="/logout/stegasi?_method=DELETE" method="POST">
+          <div class="nav-item logout"><button type="submit" id="login-btn"  style="width:90px">Αποσύνδεση</button></div>
+      </form>
+         
+    </div>
+      <br><br>
+        <div class="container">
+          <form action="/stegasi" method="POST" enctype="multipart/form-data">
+              <h1>Υποβολή Αίτησης Στέγασης</h1>
+              <fieldset>
+                <legend>Στοιχεία Φοιτητή</legend>
+              <div class="custom-div">
+                  <input type="text" class="input"  id=last_name placeholder="ΟΝΟΜΑ" name="username" value="<%=user.name%>" readonly>
+                  
+              </div>
+              <div class="custom-div">
+                <input type="text" class="input" id="first_name"  placeholder="ΕΠΩΝΥΜΟ" name="surname" value="<%=user.surname%>" readonly>
+                
+              </div>
+              <div class="custom-div">
+                <input type="text" class="input" id="patronym" name="patronym" placeholder="ΠΑΤΡΩΝΥΜΟ"  required>
+                  
+              </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Στοιχεία Σχολής</legend>
+              <div class="custom-select custom-div">
+                <select  name = "uni" id="tmhma" required>
+                    <option value="none" selected disabled hidden>Επέλεξε Τμήμα</option>
+                    <option value="ΤΜΗΜΑ ΗΛΕΚΤΡΟΛΟΓΩΝ ΜΗΧΑΝΙΚΩΝ ΚΑΙ ΤΕΧΝΟΛΟΓΙΑΣ ΥΠΟΛΟΓΙΣΤΩΝ">ΤΜΗΜΑ ΗΛΕΚΤΡΟΛΟΓΩΝ ΜΗΧΑΝΙΚΩΝ ΚΑΙ ΤΕΧΝΟΛΟΓΙΑΣ ΥΠΟΛΟΓΙΣΤΩΝ</option>
+                    <option value="ΤΜΗΜΑ ΧΗΜΕΙΑΣ">ΤΜΗΜΑ ΧΗΜΕΙΑΣ</option>
+                </select>
+                <label for="tmhma">ΤΜΗΜΑ</label>
+              </div>
+              <div class="radio-div">
+                <span id="kuklos">Κύκλος Σπουδών</span><br>
+                  
+                    <label class="custom-radio">Προπτυχιακό
+                      <input  type="radio" id="inlineCheckbox1" name="kuklos_spoudwn" value="Προπτυχιακό">
+                      <span class="radiomark"></span>
+                    </label>
+                    <label class="custom-radio">Μεταπτυχιακό
+                      <input  type="radio" id="inlineCheckbox2"name="kuklos_spoudwn" value="Μεταπτυχιακό">
+                      <span class="radiomark"></span>
+                    </label>
+                    <label  class="custom-radio">Διδακτορικό
+                      <input  type="radio" id="inlineCheckbox3"name="kuklos_spoudwn" value="Διδακτορικό">
+                      <span class="radiomark"></span>
+                    </label>
+              </div>
+              <div class="custom-div">
+                  <input type="text"  class="input" id="AM" placeholder="Αριθμός Μητρώου" name="am" value="<%=user.am%>" readonly>
+                  
+              </div>
+              <div class="custom-div">
+                  <input type="number"  class="input" id="etos_eisagwghs" placeholder="Έτος Εισαγωγής" name="startyear" value="<%=user.startyear%>" readonly>
+                  
+              </div>
+
+              <div class="custom-div">
+                <input type="text" name="barcode" class="input" id="paso" placeholder=" Αριθμός Barcode Φοιτητικής Ταυτότητας"required>
+            </div>
+            <div class="custom-div">
+              <input type="text" name="adt" class="input" id="adt" placeholder=" Αριθμός Δελτίου Ταυτότητας"required>
+          </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Διεύθυνση Κατοικίας</legend>
+            <div class="custom-div">
+                <input type="text" name ="tempadressStreet"  class="input" id="tempadressStreet" placeholder="Δρόμος">
+               
+            </div>
+            <div class="custom-div">
+              <input type="number" name ="tempadressNumber"  class="input" id="tempadressNumber" placeholder="Αριθμός Δ/νσης">
+              
+          </div>
+          <div class="custom-div">
+              <input type="text" name ="tempadressCity"  class="input" id="tempadressCity" placeholder="Πόλη">
+              
+          </div>
+          <div class="custom-div">
+              <input type="text" name ="tempadressRegion"  class="input" id="tempadressRegion" placeholder="Περιοχή">
+              
+          </div>
+          <div class="custom-div">
+              <input type="text" name ="tempadressDivision"  class="input" id="tempadressDivision" placeholder="Δήμος">
+              
+          </div>
+
+            </fieldset>
+            
+            <fieldset>
+              <legend>Διεύθυνση Μόνιμης Κατοικίας</legend>
+            <div class="custom-div">
+                <input type="text" name ="permadressStreet"  class="input" id="permadressStreet" placeholder="Δρόμος">
+            </div>
+            <div class="custom-div">
+              <input type="number" name ="permadressNumber"  class="input" id="permadressNumber" placeholder="Αριθμός Δ/νσης">
+              <label for="permadressNumber">Αριθμός Δ/νσης</label>
+          </div>
+          <div class="custom-div">
+              <input type="text" name ="permadressCity"  class="input" id="permadressCity" placeholder="Πόλη">
+          </div>
+          <div class="custom-div">
+              <input type="text" name ="permadressRegion"  class="input" id="permadressRegion" placeholder="Περιοχή">
+          </div>
+          <div class="custom-div">
+              <input type="text" name ="permadressDivision" class="input" id="permadressDivision" placeholder="Δήμος">
+          </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Στοιχεία Επικοινωνίας</legend>
+          <div class="custom-div">
+              <input type="tel" name="phone" class="input" id="thlefwno" placeholder="Αριθμός Τηλεφώνου">
+          </div>
+          
+          <div class="custom-div">
+            <input type="tel" class="input" name="mobile" id="kinhto" placeholder="Αριθμός Τηλεφώνου(Κινητό)"required>
+            
+        </div>
+
+        <div class="custom-div">
+            <input type="email" class="input" name="email" id="email" placeholder="Φοιτητικό Email" value="<%=user.email%>" readonly>
+        </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Οικογενειακή Κατάσταση</legend>
+          <div class="custom-div">
+            <input type="number" name="fam_members" class="input"  placeholder=" Αριθμός μελών οικογένειας"required>
+        </div>
+        <div class="custom-div">
+          <input type="text" name="fjob" class="input"  placeholder=" Επάγγελμα πατρός"required>
+        </div>
+          <div class="custom-div">
+            <input type="text" name="mjob" class="input"  placeholder=" Επάγγελμα μητέρας"required>
+        </div>
+        <div class="custom-div">
+          <input type="text" name="sjob" class="input"  placeholder=" Επάγγελμα ίδιου"required>
+        </div>
+        <div class="custom-div">
+          <input type="text" name="fincome" class="input"  placeholder=" Μηνιαία έσοδα πατρός">
+        </div>
+        <div class="custom-div">
+          <input type="text" name="mincome" class="input"  placeholder=" Μηνιαία έσοδα μητέρας">
+        </div>
+        <div class="custom-div">
+          <input type="text" name="sincome" class="input"  placeholder=" Μηνιαία έσοδα ίδιου">
+        </div>
+        <div class="custom-div">
+          <input type="text" name="f3income" class="input"  placeholder=" Άλλα έσοδα πατρός">
+        </div>
+        <div class="custom-div">
+          <input type="text" name="m3income" class="input"  placeholder=" Άλλα έσοδα μητέρας">
+        </div>
+        <div class="custom-div">
+          <input type="text" name="s3income" class="input"  placeholder=" Άλλα έσοδα ίδιου">
+        </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Ειδικές κατηγορίες</legend>
+
+              <label class="custom-check">Πολύτεκνη
+                <input  type="checkbox" name="poluteknh">
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-check">Ορφανός από 1 γονέα
+                <input  type="checkbox" name="orphan1">
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-check">Γονέας με ειδικές ανάγκες
+                <input  type="checkbox" name="parspecialneeds">
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-check">Μέλος οικογένειας με ειδικές ανάγκες
+                <input  type="checkbox" name="famemberspecialneeds">
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-check">Αδερφός/ή σπουδάζει
+                <input  type="checkbox" name="siblingstudy">
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-check">Αδερφός/ή στο στρατό
+                <input  type="checkbox" name="siblingarmy">
+                <span class="checkmark"></span>
+              </label>
+              <label class="custom-check">Διαζευγμένοι Γονείς
+                <input  type="checkbox" name="divorcedparents">
+                <span class="checkmark"></span>
+              </label>
+            </fieldset>
+            <br><br>
+            
+            <div class="custom-files">
+              <label class="custom-file-upload" for="ekkatharistiko">
+                  <span class="file-button"><i class="fa fa-search">Εκκαθαριστικό (PDF)</i></span>
+              </label>
+              <input type="file" class="input" name="ekkatharistiko" id="ekkatharistiko">
+          </div>
+          <div class="custom-files">
+              <label class="custom-file-upload" for="tautothta">
+                <span class="file-button"><i class="fa fa-search">Αστυνομική Ταυτότητα (PDF)</i></span>
+              </label>
+              <input type="file" class="input" id="tautothta" name="tautothta">
+          </div>
+          <div class="custom-files">
+              <label class="custom-file-upload" for="paso-file">
+                <span class="file-button"><i class="fa fa-search">Ακαδ. Ταυτότητα (PDF)</i></span>
+              </label>
+              <input type="file" class="input" id="paso-file" name="pasofile">
+          </div>
+          <br>
+          <div class="custom-div">
+              <label for="sxolia">Σχόλια</label>
+              <input type="text" id="sxolia"class="input">
+              
+          </div>
+          <div class="ypobolh">
+              <button type="submit"  id="submit">Υποβολή</button>
+          </div>
+              
+          </form>
+      </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+        <script src="public/stegasi.js" async defer></script>
+    </body>
+</html>

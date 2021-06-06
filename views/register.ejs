@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/login.css">
+    <style>
+        .container{
+        transform: none;
+         top:5%;
+         left:40%;
+        }
+    </style>
+    <title>Εγγραφή</title>
+</head>
+<body>
+    <div class="container-head">
+        <a href="/">
+            <img src="/public/images/logo_Upatras.png">
+        </a>
+    </div>
+    <div class="container">
+        <div class="container-img">
+            <img src="/public/images/user.png">
+        </div>
+    <form action="/register" method="POST">
+        <div class="custom-div">
+        <input type="text" name="username" placeholder="username">
+        </div>
+        <div class="custom-div">
+        <input type="email" name="email" placeholder="username@uni.gr">
+        </div>
+        <div class="custom-div">
+        <input type="password" name="password" placeholder="password">
+        </div>
+        <div class="custom-div">
+        <input type="text" name="name" placeholder="ΟΝΟΜΑ">
+        </div>
+        <div class="custom-div">
+        <input type="text" name="surname" placeholder="ΕΠΩΝΥΜΟ">
+        </div>
+        <div class="custom-div">
+        <input type="number" name="startyear" placeholder="Έτος Εισαγωγής">
+        </div>
+        <div class="custom-div">
+        <input type="text" name="am" placeholder="Αριθμός Μητρώου">
+        </div>  
+        <button>Εγγραφή</button>
+        <br>
+    </form>
+
+    </div>
+</body>
+</html>
