@@ -1,5 +1,5 @@
 {
-  "name": "lefteris",
+  "name": "lefteris-thanasis",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -21,8 +21,8 @@
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-    
   },
-  "author": "lefteris",
-  "license": "ISC"
+  "author": "lefteris-thanasis",
+  "license": "ISC",
+  "URI": "mongodb+srv://admin:programatismosdiadiktuou@ergasiadb.vkafz.mongodb.net/lefterisdb?authSource=admin&replicaSet=atlas-10pfut-shard-0&w=majority&readPreference=primary&retryWrites=true&ssl=true"
 }

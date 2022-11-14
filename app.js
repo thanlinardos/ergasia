@@ -19,7 +19,9 @@ var Sitisi = require("./models/SitisiModel"),
     SitisiCheck = require("./models/SitisiCheckModel");
 //DATABASE CONNECT
 //uses connection string to connect to the mongodb atlas database
-mongoose.connect('mongodb+srv://admin:programatismosdiadiktuou@ergasiadb.vkafz.mongodb.net/lefterisdb?authSource=admin&replicaSet=atlas-10pfut-shard-0&w=majority&readPreference=primary&retryWrites=true&ssl=true',
+var packjson = require("./package.json")
+var URI = packjson.URI
+mongoose.connect(URI,
 {
     useNewUrlParser: true,
     useUnifiedTopology:true,
